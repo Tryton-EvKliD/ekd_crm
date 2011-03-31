@@ -1,1 +1,152 @@
-/home/trytond-1.8.2/trytond/modules/ekd_crm/xml/party_view.xml
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+        <record id="view_party_channel_form" model="ir.ui.view">
+            <field name="model">ekd.party.channel</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Channel">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="active" />
+                    <field name="active" />
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="party_party_channel-act" model="ir.action.act_window">
+            <field name="name">Channels</field>
+            <field name="res_model">ekd.party.channel</field>
+            <field name="view_type">form</field>
+        </record>
+        <menuitem id="next_id_14" name="Party Events" parent="ekd_crm.menu_crm_configuration"/>
+        <menuitem action="party_party_channel-act" id="menu_party_party_channel-act" parent="next_id_14"/>
+
+        <record id="view_party_event_type_form" model="ir.ui.view">
+            <field name="model">ekd.party.event.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Event Type">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="active" />
+                    <field name="active" />
+                    <label name="key" />
+                    <field name="key" readonly="1"/>
+                </form>
+            ]]>
+            </field>
+        </record>
+
+        <record id="view_party_event_type_tree" model="ir.ui.view">
+            <field name="model">ekd.party.event.type</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Event Type">
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="party_party_event_type-act" model="ir.action.act_window">
+            <field name="name">Active Party Events</field>
+            <field name="res_model">ekd.party.event.type</field>
+            <field name="view_type">form</field>
+            <field name="context">{'active_test': False}</field>
+        </record>
+
+        <menuitem action="party_party_event_type-act" id="menu_party_party_event_type-act" parent="next_id_14"/>
+
+        <record id="view_party_som_tree" model="ir.ui.view">
+            <field name="model">ekd.party.som</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Party State of Mind">
+                    <field name="name"/>
+                    <field name="factor"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="view_party_som_form" model="ir.ui.view">
+            <field name="model">ekd.party.som</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Party State of Mind">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="factor" />
+                    <field name="factor" />
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="party_party_som-act" model="ir.action.act_window">
+            <field name="name">States of mind</field>
+            <field name="res_model">ekd.party.som</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem action="party_party_som-act" id="menu_party_party_som-act" parent="next_id_14"/>
+
+        <record id="view_party_event_form" model="ir.ui.view">
+            <field name="model">ekd.party.event</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Party Events">
+                    <separator colspan="4" string="General Description" id="sp_001"/>
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="party_type" />
+                    <field name="party_type" />
+                    <label name="som" />
+                    <field name="som" />
+                    <label name="date" />
+                    <field name="date" />
+                    <label name="channel" />
+                    <field name="channel" />
+                    <label name="type" />
+                    <field name="type" />
+                    <label name="user" />
+                    <field name="user" />
+                    <label name="probability"/>
+                    <field name="probability"/>
+                    <label name="planned_revenue"/>
+                    <field name="planned_revenue"/>
+                    <label name="planned_cost"/>
+                    <field name="planned_cost"/>
+                    <separator colspan="4" string="Description" id="sp_002"/>
+                    <field colspan="4" name="description"/>
+                    <separator colspan="4" string="Document Link" id="sp_003"/>
+                    <field colspan="4" name="document"/>
+                </form>
+            ]]>
+            </field>
+        </record>
+
+        <record id="view_party_event_tree" model="ir.ui.view">
+            <field name="model">ekd.party.event</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="party Events">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="som"/>
+                    <field name="party_type"/>
+                    <field name="user"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+    </data>
+</tryton>

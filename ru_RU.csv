@@ -1,0 +1,365 @@
+type,name,res_id,src,value,fuzzy
+error,ekd.crm.case.section,0,The code of the section must be unique !,,0
+error,ekd.crm.case.section,0,You can not create recursive accounts!,Вы не можете создать взаимозависимые счета!,0
+field,"ekd.crm.case,active",0,Active,Действующий,0
+field,"ekd.crm.case,categ",0,Category,Категории,0
+field,"ekd.crm.case,categ_id",0,Category,Категории,0
+field,"ekd.crm.case,channel",0,Channel,Канал связи,0
+field,"ekd.crm.case,channel_id",0,Channel,Канал связи,0
+field,"ekd.crm.case,date",0,Date,Дата,0
+field,"ekd.crm.case,date_action_last",0,Last Action,Предыдущее действие,0
+field,"ekd.crm.case,date_action_next",0,Next Action,Следующее действие,0
+field,"ekd.crm.case,date_closed",0,Closed,Закрыто,0
+field,"ekd.crm.case,date_deadline",0,Deadline,Крайний срок,0
+field,"ekd.crm.case,description",0,Your action,Ваши действия,0
+field,"ekd.crm.case,email_cc",0,Watchers Emails,,0
+field,"ekd.crm.case,email_from",0,party Email,,0
+field,"ekd.crm.case,email_last",0,Latest E-Mail,Следующая эл.почта,0
+field,"ekd.crm.case,history_line",0,Communication,Переписка,0
+field,"ekd.crm.case,log_ids",0,Logs History,Журналы выполнения,0
+field,"ekd.crm.case,name",0,Description,Описание,0
+field,"ekd.crm.case,party",0,Party,Контрагенты,0
+field,"ekd.crm.case,party_address",0,Party Contact,,0
+field,"ekd.crm.case,party_address_id",0,Party Contact,,0
+field,"ekd.crm.case,party_id",0,Party,Контрагенты,0
+field,"ekd.crm.case,planned_cost",0,Planned Costs,Планируемые затраты,0
+field,"ekd.crm.case,planned_revenue",0,Planned Revenue,Планируемая выручка,0
+field,"ekd.crm.case,priority",0,Priority,Приоритет,0
+field,"ekd.crm.case,probability",0,Probability (%),Вероятность (%),0
+field,"ekd.crm.case,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case,ref",0,Reference,Ссылка,0
+field,"ekd.crm.case,ref2",0,Reference 2,Ссылка доп.,0
+field,"ekd.crm.case,section",0,Section,Группа,0
+field,"ekd.crm.case,som",0,State of Mind,Намерение,0
+field,"ekd.crm.case,state",0,Status,Состояние,0
+field,"ekd.crm.case,user",0,Responsible,Ответственный,0
+field,"ekd.crm.case.category,name",0,Case Category Name,Наименование,0
+field,"ekd.crm.case.category,probability",0,Probability (%),Вероятность (%),0
+field,"ekd.crm.case.category,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case.category,section",0,Case Section,Группа дела,0
+field,"ekd.crm.case.history,description",0,Description,Описание,0
+field,"ekd.crm.case.history,email",0,Email,Эл.почта,0
+field,"ekd.crm.case.history,log",0,Log,Журнал,0
+field,"ekd.crm.case.history,log_id",0,Log,Журнал,0
+field,"ekd.crm.case.history,note",0,Description,Описание,0
+field,"ekd.crm.case.history,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case.log,case",0,Case,Дело,0
+field,"ekd.crm.case.log,case_id",0,Case,Дело,0
+field,"ekd.crm.case.log,channel",0,Channel,Канал связи,0
+field,"ekd.crm.case.log,channel_id",0,Channel,Канал связи,0
+field,"ekd.crm.case.log,date",0,Date,Дата,0
+field,"ekd.crm.case.log,name",0,Action,Действие,0
+field,"ekd.crm.case.log,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case.log,section",0,Section,Группа,0
+field,"ekd.crm.case.log,som",0,State of Mind,Намерение,0
+field,"ekd.crm.case.log,user",0,User Responsible,Ответственный,0
+field,"ekd.crm.case.rule,act_email_cc",0,Add watchers (Cc),,0
+field,"ekd.crm.case.rule,act_mail_body",0,Mail body,Текст письма,0
+field,"ekd.crm.case.rule,act_method",0,Call Object Method,,0
+field,"ekd.crm.case.rule,act_priority",0,Set priority to,Установить приоритет в,0
+field,"ekd.crm.case.rule,act_remind_attach",0,Remind with attachment,Напомнить с вложением,0
+field,"ekd.crm.case.rule,act_remind_party",0,Remind party,Напомнить клиенту,0
+field,"ekd.crm.case.rule,act_remind_user",0,Remind responsible,Напомнить ответственному,0
+field,"ekd.crm.case.rule,act_section",0,Set section to,Установить группу в,0
+field,"ekd.crm.case.rule,act_state",0,Set state to,Установить состояние в,0
+field,"ekd.crm.case.rule,act_user",0,Set responsible to,Установить ответственного,0
+field,"ekd.crm.case.rule,active",0,Active,Действующий,0
+field,"ekd.crm.case.rule,name",0,Rule Name,Наименование,0
+field,"ekd.crm.case.rule,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case.rule,sequence",0,Sequence,Последовательность,0
+field,"ekd.crm.case.rule,trg_categ",0,Category,Категории,0
+field,"ekd.crm.case.rule,trg_categ_id",0,Category,Категории,0
+field,"ekd.crm.case.rule,trg_date_range",0,Delay after trigger date,,0
+field,"ekd.crm.case.rule,trg_date_range_type",0,Delay type,Тип задержки,0
+field,"ekd.crm.case.rule,trg_date_type",0,Trigger Date,Дата триггера,0
+field,"ekd.crm.case.rule,trg_max_history",0,Maximum Communication History,,0
+field,"ekd.crm.case.rule,trg_party",0,party,клиент,0
+field,"ekd.crm.case.rule,trg_party_categ",0,party Category,,0
+field,"ekd.crm.case.rule,trg_party_categ_id",0,party Category,,0
+field,"ekd.crm.case.rule,trg_party_id",0,party,клиент,0
+field,"ekd.crm.case.rule,trg_priority_from",0,Minimum Priority,,0
+field,"ekd.crm.case.rule,trg_priority_to",0,Maximim Priority,,0
+field,"ekd.crm.case.rule,trg_section",0,Section,Группа,0
+field,"ekd.crm.case.rule,trg_state_from",0,Case State,Состояние дела,0
+field,"ekd.crm.case.rule,trg_state_to",0,Button Pressed,,0
+field,"ekd.crm.case.rule,trg_user",0,Responsible,Ответственный,0
+field,"ekd.crm.case.section,active",0,Active,Действующий,0
+field,"ekd.crm.case.section,allow_unlink",0,Allow Delete,Разрешить удаление,0
+field,"ekd.crm.case.section,child_ids",0,Child Sections,,0
+field,"ekd.crm.case.section,code",0,Section Code,Код,0
+field,"ekd.crm.case.section,name",0,Case Section,Группа дела,0
+field,"ekd.crm.case.section,parent",0,Parent Section,,0
+field,"ekd.crm.case.section,rec_name",0,Name,Наименование,0
+field,"ekd.crm.case.section,reply_to",0,Reply-To,Ответить,0
+field,"ekd.crm.case.section,sequence",0,Sequence,Последовательность,0
+field,"ekd.crm.case.section,user",0,Responsible User,Ответственный сотрудник,0
+field,"ekd.crm.segmentation,categ",0,party Category,,0
+field,"ekd.crm.segmentation,categ_id",0,party Category,,0
+field,"ekd.crm.segmentation,description",0,Description,Описание,0
+field,"ekd.crm.segmentation,exclusif",0,Exclusive,Эксклюзивный,0
+field,"ekd.crm.segmentation,name",0,Name,Наименование,0
+field,"ekd.crm.segmentation,party",0,Max party ID processed,,0
+field,"ekd.crm.segmentation,party_id",0,Max party ID processed,,0
+field,"ekd.crm.segmentation,rec_name",0,Name,Наименование,0
+field,"ekd.crm.segmentation,sales_purchase_active",0,Use The Sales Purchase Rules,Используйте Правила Продажи Закупки,0
+field,"ekd.crm.segmentation,segmentation_line",0,Criteria,Критерия,0
+field,"ekd.crm.segmentation,som_interval",0,Days per Periode,Дни в периоде,0
+field,"ekd.crm.segmentation,som_interval_decrease",0,Decrease (0>1),,0
+field,"ekd.crm.segmentation,som_interval_default",0,Default (0=None),,0
+field,"ekd.crm.segmentation,som_interval_max",0,Max Interval,,0
+field,"ekd.crm.segmentation,state",0,Execution Status,Состояние выполнения,0
+field,"ekd.crm.segmentation.line,expr_name",0,Control Variable,Контроль переменных,0
+field,"ekd.crm.segmentation.line,expr_operator",0,Operator,Оператор,0
+field,"ekd.crm.segmentation.line,expr_value",0,Value,Значение,0
+field,"ekd.crm.segmentation.line,name",0,Rule Name,Наименование,0
+field,"ekd.crm.segmentation.line,operator",0,Mandatory / Optional,Обязательное / Факультативного,0
+field,"ekd.crm.segmentation.line,rec_name",0,Name,Наименование,0
+field,"ekd.crm.segmentation.line,segmentation",0,Segmentation,Сегментация,0
+field,"ekd.crm.segmentation.line,segmentation_id",0,Segmentation,Сегментация,0
+field,"ekd.party.channel,active",0,Active,Действующий,0
+field,"ekd.party.channel,name",0,Channel Name,Наименование канала связи,0
+field,"ekd.party.channel,rec_name",0,Name,Наименование,0
+field,"ekd.party.event,channel",0,Channel,Канал связи,0
+field,"ekd.party.event,channel_id",0,Channel,Канал связи,0
+field,"ekd.party.event,date",0,Date,Дата,0
+field,"ekd.party.event,description",0,Description,Описание,0
+field,"ekd.party.event,document",0,Document,Документ,0
+field,"ekd.party.event,event_ical",0,iCal id,,0
+field,"ekd.party.event,event_ical_id",0,iCal id,,0
+field,"ekd.party.event,name",0,Events,События,0
+field,"ekd.party.event,partner_id",0,Party,Контрагенты,0
+field,"ekd.party.event,partner_type",0,Party Relation,Связь с клиентом,0
+field,"ekd.party.event,party",0,Party,Контрагенты,0
+field,"ekd.party.event,party_type",0,Party Relation,Связь с клиентом,0
+field,"ekd.party.event,planned_cost",0,Planned Cost,Планируемые затраты,0
+field,"ekd.party.event,planned_revenue",0,Planned Revenue,Планируемая выручка,0
+field,"ekd.party.event,probability",0,Probability (0.50),Вероятность (0.50),0
+field,"ekd.party.event,rec_name",0,Name,Наименование,0
+field,"ekd.party.event,som",0,State of Mind,Намерение,0
+field,"ekd.party.event,type",0,Type of Event,Тип события,0
+field,"ekd.party.event,user",0,User,Пользователь,0
+field,"ekd.party.event,user_id",0,User,Пользователь,0
+field,"ekd.party.event.type,active",0,Active,Действующий,0
+field,"ekd.party.event.type,key",0,Key,Ключ,0
+field,"ekd.party.event.type,name",0,Event Type,Тип события,0
+field,"ekd.party.event.type,rec_name",0,Name,Наименование,0
+field,"ekd.party.som,factor",0,Factor,Коэффициент к основной единице,0
+field,"ekd.party.som,name",0,State of Mind,Намерение,0
+field,"ekd.party.som,rec_name",0,Name,Наименование,0
+help,"ekd.crm.case.rule,act_email_cc",0,These people will receive a copy of the futur communication between party and users by email,,0
+help,"ekd.crm.case.rule,act_remind_attach",0,Check this if you want that all documents attached to the case be attached to the reminder email sent.,,0
+help,"ekd.crm.case.rule,act_remind_party",0,Check this if you want the rule to send a reminder by email to the party.,,0
+help,"ekd.crm.case.rule,act_remind_user",0,Check this if you want the rule to send a reminder by email to the user.,,0
+help,"ekd.crm.case.section,allow_unlink",0,Allows to delete non draft cases,,0
+help,"ekd.crm.case.section,reply_to",0,The email address put in the 'Reply-To' of all emails sent by Open ERP about cases in this section,,0
+help,"ekd.crm.segmentation,categ",0,The party category that will be added to partys that match the segmentation criterions after computation.,,0
+help,"ekd.crm.segmentation,categ_id",0,The party category that will be added to partys that match the segmentation criterions after computation.,,0
+help,"ekd.crm.segmentation,exclusif",0,"Check if the category is limited to partys that match the segmentation criterions. If checked, remove the category from partys that doesn't match segmentation criterions",,0
+help,"ekd.crm.segmentation,name",0,The name of the segmentation.,,0
+help,"ekd.crm.segmentation,sales_purchase_active",0,"Check if you want to use this tab as part of the segmentation rule. If not checked, the criteria beneath will be ignored",,0
+help,"ekd.crm.segmentation,som_interval",0,"A period is the average number of days between two cycle of sale or purchase for this segmentation. It's mainly used to detect if a party has not purchased or buy for a too long time, so we suppose that his state of mind has decreased because he probably bought goods to another supplier. Use this functionality for recurring businesses.",,0
+help,"ekd.crm.segmentation,som_interval_decrease",0,"If the party has not purchased (or bought) during a period, decrease the state of mind by this factor. It's a multiplication",,0
+help,"ekd.crm.segmentation,som_interval_default",0,Default state of mind for period preceeding the 'Max Interval' computation. This is the starting state of mind by default if the party has no event.,,0
+help,"ekd.crm.segmentation,som_interval_max",0,"The computation is made on all events that occured during this interval, the past X periods.",,0
+model,"ekd.crm.case,name",0,Case,Дело,0
+model,"ekd.crm.case.category,name",0,Category of case,Категория дела,0
+model,"ekd.crm.case.history,name",0,Case history,,0
+model,"ekd.crm.case.log,name",0,Case Communication History,,0
+model,"ekd.crm.case.rule,name",0,Case Rule,,0
+model,"ekd.crm.case.section,name",0,Case Section,Группа дела,0
+model,"ekd.crm.segmentation,name",0,Party Segmentation,,0
+model,"ekd.crm.segmentation.line,name",0,Segmentation line,Строка сегментация,0
+model,"ekd.party.channel,name",0,Channels,Каналы связи,0
+model,"ekd.party.event,name",0,ekd.party.event,,0
+model,"ekd.party.event.type,name",0,Party Events,События клиента,0
+model,"ekd.party.som,name",0,ekd.party.som,,0
+model,"ir.action,name",act_crm_case_category_form,Categories,Категория,0
+model,"ir.action,name",act_crm_case_form_all,All Cases,Все дела,0
+model,"ir.action,name",act_crm_case_form_open,Open Cases,Открытые дела,0
+model,"ir.action,name",act_crm_case_my,My cases,Мои дела,0
+model,"ir.action,name",act_crm_case_my_open,My Open Cases,Мои открытые дела,0
+model,"ir.action,name",act_crm_case_rule_form,Rules,Правила,0
+model,"ir.action,name",act_crm_case_section_form,Sections,Группы,0
+model,"ir.action,name",act_crm_case_section_tree,Cases by section,Дела по группам,0
+model,"ir.action,name",crm_case_history-act,All Histories,,0
+model,"ir.action,name",crm_case_history_my-act,My Histories,,0
+model,"ir.action,name",crm_case_section_open_act,Cases,Дела,0
+model,"ir.action,name",crm_segmentation-act,Segmentations,Сегментации,0
+model,"ir.action,name",crm_segmentation_tree-act,Segmentations,Сегментации,0
+model,"ir.action,name",party_party_channel-act,Channels,Каналы связи,0
+model,"ir.action,name",party_party_event_type-act,Active Party Events,,0
+model,"ir.action,name",party_party_som-act,States of mind,Намерения,0
+model,"ir.cron,name",ir_cron_crm_action,Check cases rules,,0
+model,"ir.ui.menu,name",menu_crm,CRM & SRM,,0
+model,"ir.ui.menu,name",menu_crm_case_all,All Cases,Все дела,0
+model,"ir.ui.menu,name",menu_crm_case_category,Categories,Категория,0
+model,"ir.ui.menu,name",menu_crm_case_history-act,All Histories,,0
+model,"ir.ui.menu,name",menu_crm_case_history-act_main,Cases Histories,,0
+model,"ir.ui.menu,name",menu_crm_case_history_my-act,My Histories,,0
+model,"ir.ui.menu,name",menu_crm_case_my,My cases,Мои дела,0
+model,"ir.ui.menu,name",menu_crm_case_my_open,My Open Cases,Мои открытые дела,0
+model,"ir.ui.menu,name",menu_crm_case_open,Open Cases,Открытые дела,0
+model,"ir.ui.menu,name",menu_crm_case_rule,Rules,Правила,0
+model,"ir.ui.menu,name",menu_crm_case_section_act,Sections,Группы,0
+model,"ir.ui.menu,name",menu_crm_case_section_act_tree,Cases by section,Дела по группам,0
+model,"ir.ui.menu,name",menu_crm_configuration,Configuration,Конфигурация,0
+model,"ir.ui.menu,name",menu_crm_segmentation-act,Segmentations,Сегментации,0
+model,"ir.ui.menu,name",menu_party_party_channel-act,Channels,Каналы связи,0
+model,"ir.ui.menu,name",menu_party_party_event_type-act,Active Party Events,,0
+model,"ir.ui.menu,name",menu_party_party_som-act,States of mind,Намерения,0
+model,"ir.ui.menu,name",next_id_14,Party Events,События клиента,0
+model,"ir.ui.menu,name",next_id_51,Cases,Дела,0
+model,"ir.ui.menu,name",next_id_52,All Cases,Все дела,0
+model,"ir.ui.menu,name",next_id_53,Segmentations,Сегментации,0
+selection,"ekd.crm.case,priority",0,High,Высокий,0
+selection,"ekd.crm.case,priority",0,Highest,Наивысший,0
+selection,"ekd.crm.case,priority",0,Low,Низкий,0
+selection,"ekd.crm.case,priority",0,Lowest,Самый низкий,0
+selection,"ekd.crm.case,priority",0,Normal,Нормальный,0
+selection,"ekd.crm.case,state",0,Cancel,Отменить,0
+selection,"ekd.crm.case,state",0,Close,Закрыть,0
+selection,"ekd.crm.case,state",0,Draft,Черновик,0
+selection,"ekd.crm.case,state",0,Open,Открыть,0
+selection,"ekd.crm.case,state",0,Pending,Ожидающий решения,0
+selection,"ekd.crm.case.rule,act_priority",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,act_priority",0,High,Высокий,0
+selection,"ekd.crm.case.rule,act_priority",0,Highest,Наивысший,0
+selection,"ekd.crm.case.rule,act_priority",0,Low,Низкий,0
+selection,"ekd.crm.case.rule,act_priority",0,Lowest,Самый низкий,0
+selection,"ekd.crm.case.rule,act_priority",0,Normal,Нормальный,0
+selection,"ekd.crm.case.rule,act_state",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,act_state",0,Cancel,Отменить,0
+selection,"ekd.crm.case.rule,act_state",0,Close,Закрыть,0
+selection,"ekd.crm.case.rule,act_state",0,Draft,Черновик,0
+selection,"ekd.crm.case.rule,act_state",0,Open,Открыть,0
+selection,"ekd.crm.case.rule,act_state",0,Pending,Ожидающий решения,0
+selection,"ekd.crm.case.rule,trg_date_range_type",0,Days,Дни:,0
+selection,"ekd.crm.case.rule,trg_date_range_type",0,Hours,Часы,0
+selection,"ekd.crm.case.rule,trg_date_range_type",0,Minutes,Минуты,0
+selection,"ekd.crm.case.rule,trg_date_range_type",0,Months,Месяцы:,0
+selection,"ekd.crm.case.rule,trg_date_type",0,Creation Date,Дата создания,0
+selection,"ekd.crm.case.rule,trg_date_type",0,Date,Дата,0
+selection,"ekd.crm.case.rule,trg_date_type",0,Deadline,Крайний срок,0
+selection,"ekd.crm.case.rule,trg_date_type",0,Last Action Date,Дата предыдущего действия,0
+selection,"ekd.crm.case.rule,trg_date_type",0,None,Отсутствует,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,High,Высокий,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,Highest,Наивысший,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,Low,Низкий,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,Lowest,Самый низкий,0
+selection,"ekd.crm.case.rule,trg_priority_from",0,Normal,Нормальный,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,High,Высокий,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,Highest,Наивысший,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,Low,Низкий,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,Lowest,Самый низкий,0
+selection,"ekd.crm.case.rule,trg_priority_to",0,Normal,Нормальный,0
+selection,"ekd.crm.case.rule,trg_state_from",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Cancel,Отменить,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Close,Закрыть,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Draft,Черновик,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Escalate,Расширить,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Open,Открыть,0
+selection,"ekd.crm.case.rule,trg_state_from",0,Pending,Ожидающий решения,0
+selection,"ekd.crm.case.rule,trg_state_to",0,,Резервный счет,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Cancel,Отменить,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Close,Закрыть,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Draft,Черновик,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Escalate,Расширить,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Open,Открыть,0
+selection,"ekd.crm.case.rule,trg_state_to",0,Pending,Ожидающий решения,0
+selection,"ekd.crm.segmentation,state",0,Not Running,Не запущен,0
+selection,"ekd.crm.segmentation,state",0,Running,Выполняющиеся,0
+selection,"ekd.crm.segmentation.line,expr_name",0,Purchase Amount,Сумма закупки,0
+selection,"ekd.crm.segmentation.line,expr_name",0,Sale Amount,Сумма продажи,0
+selection,"ekd.crm.segmentation.line,expr_name",0,State of Mind,Намерение,0
+selection,"ekd.crm.segmentation.line,expr_operator",0,<,,0
+selection,"ekd.crm.segmentation.line,expr_operator",0,=,,0
+selection,"ekd.crm.segmentation.line,expr_operator",0,>,,0
+selection,"ekd.crm.segmentation.line,operator",0,Mandatory Expression,Обязательное Выражение,0
+selection,"ekd.crm.segmentation.line,operator",0,Optional Expression,,0
+selection,"ekd.party.event,partner_type",0,Commercial Prospect,Предполагаемый клиент,0
+selection,"ekd.party.event,partner_type",0,Customer,Заказчик,0
+selection,"ekd.party.event,partner_type",0,Retailer,Розничный торговец,0
+selection,"ekd.party.event,party_type",0,Commercial Prospect,Предполагаемый клиент,0
+selection,"ekd.party.event,party_type",0,Customer,Заказчик,0
+selection,"ekd.party.event,party_type",0,Retailer,Розничный торговец,0
+selection,"ekd.party.event,type",0,Prospect Contact,Ожидаемый контакт,0
+selection,"ekd.party.event,type",0,Purchase Offer,Предложение о покупке,0
+selection,"ekd.party.event,type",0,Sale Opportunity,Возможность продажи,0
+view,ekd.crm.case,0,Action Information,,0
+view,ekd.crm.case,0,Actions,Действия,0
+view,ekd.crm.case,0,Add Last Mail for Replying,,0
+view,ekd.crm.case,0,Cancel,Отменить,0
+view,ekd.crm.case,0,Cases,Дела,0
+view,ekd.crm.case,0,Close,Закрыть,0
+view,ekd.crm.case,0,Communication history,,0
+view,ekd.crm.case,0,Dates,Дни,0
+view,ekd.crm.case,0,Escalate,Расширить,0
+view,ekd.crm.case,0,Estimates,Расширить_,0
+view,ekd.crm.case,0,Extra Info,Дополнительная информация,0
+view,ekd.crm.case,0,General,Основной,0
+view,ekd.crm.case,0,Historize,,0
+view,ekd.crm.case,0,History,Переписка,0
+view,ekd.crm.case,0,Open,Открыть,0
+view,ekd.crm.case,0,Pending,Ожидающий решения,0
+view,ekd.crm.case,0,Planned costs,Планируемые затраты,0
+view,ekd.crm.case,0,Planned revenue,Планируемая выручка,0
+view,ekd.crm.case,0,References,Ссылки,0
+view,ekd.crm.case,0,Reset to Draft,Сбросить в черновик,0
+view,ekd.crm.case,0,Send Reminder,Отправить Напоминание,0
+view,ekd.crm.case,0,Send party & Historize,,0
+view,ekd.crm.case.category,0,Case Category,Категория дела,0
+view,ekd.crm.case.history,0,Case Description,Описание дела,0
+view,ekd.crm.case.history,0,Case History,,0
+view,ekd.crm.case.history,0,Cases,Дела,0
+view,ekd.crm.case.log,0,Case logs,,0
+view,ekd.crm.case.rule,0,%(case)s = Case ID,,0
+view,ekd.crm.case.rule,0,%(case_date)s = Creation date,,0
+view,ekd.crm.case.rule,0,%(case_description)s = Case description,,0
+view,ekd.crm.case.rule,0,%(case_subject)s = Case subject,,0
+view,ekd.crm.case.rule,0,%(case_user)s = Responsible name,,0
+view,ekd.crm.case.rule,0,%(case_user_email)s = Responsible email,,0
+view,ekd.crm.case.rule,0,%(case_user_phone)s = Responsible phone,,0
+view,ekd.crm.case.rule,0,%(email_from)s = party email,,0
+view,ekd.crm.case.rule,0,%(party)s = party name,,0
+view,ekd.crm.case.rule,0,%(party_email)s = party email,,0
+view,ekd.crm.case.rule,0,Actions,Действия,0
+view,ekd.crm.case.rule,0,Case Rule,,0
+view,ekd.crm.case.rule,0,Condition on Communication History,,0
+view,ekd.crm.case.rule,0,Conditions,Условия,0
+view,ekd.crm.case.rule,0,Conditions on Case Fields,Условия по полям дела,0
+view,ekd.crm.case.rule,0,Conditions on Case Party,Условия по делу клиента,0
+view,ekd.crm.case.rule,0,Conditions on Priority Range,Условия по приоритету,0
+view,ekd.crm.case.rule,0,Conditions on States,Условия по состоянию,0
+view,ekd.crm.case.rule,0,Conditions on Timing,Условия по времени,0
+view,ekd.crm.case.rule,0,Delay After Trigger Date:,,0
+view,ekd.crm.case.rule,0,E-Mail Actions,Эл.почта действия,0
+view,ekd.crm.case.rule,0,E-Mail Reminders (includes the content of the case),,0
+view,ekd.crm.case.rule,0,Fields to Change,Поля для изменения,0
+view,ekd.crm.case.rule,0,Note,Комментарий,0
+view,ekd.crm.case.rule,0,Special Keywords to Be Used in The Body,"Специальные ключевые слова, могут быть использованы в письме",0
+view,ekd.crm.case.rule,0,Template of Email to Send,,0
+view,ekd.crm.case.rule,0,The rule use a AND operator. The case must match all non empty fields so that the rule execute the action described in the 'Actions' tab.,,0
+view,ekd.crm.case.section,0,Case Section,Группа дела,0
+view,ekd.crm.case.section,0,Case section,Группа дела,0
+view,ekd.crm.case.section,0,Complete this if you use the mail gateway.,,0
+view,ekd.crm.segmentation,0,Compute Segmentation,,0
+view,ekd.crm.segmentation,0,Continue Process,Продолжить процесс,0
+view,ekd.crm.segmentation,0,Sales Purchase,Продажи Закупки,0
+view,ekd.crm.segmentation,0,Segmentation,Сегментация,0
+view,ekd.crm.segmentation,0,Segmentation Description,Описание сегментации,0
+view,ekd.crm.segmentation,0,Segmentation Test,Проверка сегментации,0
+view,ekd.crm.segmentation,0,State of Mind Computation,Расчетать намерение,0
+view,ekd.crm.segmentation,0,Stop Process,Остановить процесс,0
+view,ekd.crm.segmentation,0,party Segmentation,,0
+view,ekd.crm.segmentation,0,party Segmentations,,0
+view,ekd.crm.segmentation.line,0,party Segmentation Lines,,0
+view,ekd.party.channel,0,Channel,Канал связи,0
+view,ekd.party.event,0,Description,Описание,0
+view,ekd.party.event,0,Document Link,Ссылка,0
+view,ekd.party.event,0,General Description,Основное описание,0
+view,ekd.party.event,0,Party Events,События клиента,0
+view,ekd.party.event,0,party Events,События клиента,0
+view,ekd.party.event.type,0,Event Type,Тип события,0
+view,ekd.party.som,0,Party State of Mind,Намерение клиента,0

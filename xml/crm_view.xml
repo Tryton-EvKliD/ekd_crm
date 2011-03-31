@@ -1,1 +1,708 @@
-/home/trytond-1.8.2/trytond/modules/ekd_crm/xml/crm_view.xml
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+        <menuitem icon="tryton-users" id="menu_crm" name="CRM &amp; SRM"/>
+        <menuitem id="menu_crm_configuration" name="Configuration" parent="ekd_crm.menu_crm" sequence="0"/>
+
+        <record id="party_party_events_tree" model="ir.ui.view">
+            <field name="model">ekd.party.event</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Party Events">
+                    <field name="date" select="1"/>
+                    <field name="name" select="1"/>
+                    <field name="som" select="2"/>
+                    <field name="type" select="2"/>
+                    <field name="party_type" select="2"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <!-- Case Sections -->
+        <record id="view_crm_case_section_form" model="ir.ui.view">
+            <field name="model">ekd.crm.case.section</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Case Section">
+                    <notebook>
+                        <page string="Case section" id="section">
+                            <label name="name"/>
+                            <field name="name"/>
+                            <label name="code"/>
+                            <field name="code"/>
+                            <label name="sequence"/>
+                            <field name="sequence"/>
+                            <label name="active"/>
+                            <field name="active"/>
+                            <label name="user"/>
+                            <field name="user"/>
+                            <label name="parent"/>
+                            <field name="parent"/>
+                            <label name="allow_unlink"/>
+                            <field name="allow_unlink"/>
+                            <label name="reply_to"/>
+                            <field name="reply_to"/>
+                            <label colspan="2" string="Complete this if you use the mail gateway." id="complete"/>
+                        </page>
+                    </notebook>
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="view_crm_case_section_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case.section</field>
+            <field name="type">tree</field>
+            <field name="field_childs">child_ids</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Case Section">
+                    <field name="name" select="1"/>
+                    <field name="code" select="1"/>
+                    <field name="user" select="1"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+        <record model="ir.action.act_window" id="act_crm_case_section_form">
+            <field name="name">Sections</field>
+            <field name="res_model">ekd.crm.case.section</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_section_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="view_crm_case_section_tree"/>
+            <field name="act_window" ref="act_crm_case_section_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_section_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="view_crm_case_section_form"/>
+            <field name="act_window" ref="act_crm_case_section_form"/>
+        </record>
+
+        <menuitem id="next_id_51" name="Cases" parent="ekd_crm.menu_crm_configuration"/>
+        <menuitem action="act_crm_case_section_form" id="menu_crm_case_section_act" parent="next_id_51"/>
+
+        <menuitem id="next_id_52" name="All Cases" parent="ekd_crm.menu_crm" sequence="1"/>
+
+        <record model="ir.action.act_window" id="act_crm_case_section_tree">
+            <field name="name">Cases by section</field>
+            <field name="res_model">ekd.crm.case.section</field>
+            <field name="domain">[('parent','=',False)]</field>
+            <field name="view_type">tree</field>
+        </record>
+<!-->
+        <record model="ir.action.act_window.view" id="act_crm_case_section_case_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="view_crm_case_section_tree"/>
+            <field name="act_window" ref="act_crm_case_section_tree"/>
+        </record>
+<-->
+        <menuitem action="act_crm_case_section_tree" id="menu_crm_case_section_act_tree" parent="next_id_52"/>
+
+        <!-- Case Categories -->
+        <record id="view_crm_case_category_form" model="ir.ui.view">
+            <field name="model">ekd.crm.case.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Case Category">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="section" />
+                    <field name="section" />
+                    <label name="probability"/>
+                    <field name="probability"/>
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="view_crm_case_category_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Case Category">
+                    <field name="name"/>
+                    <field name="section"/>
+                    <field name="probability"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="act_crm_case_category_form" model="ir.action.act_window">
+            <field name="name">Categories</field>
+            <field name="res_model">ekd.crm.case.category</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_category_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="view_crm_case_category_tree"/>
+            <field name="act_window" ref="act_crm_case_category_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_category_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="view_crm_case_category_form"/>
+            <field name="act_window" ref="act_crm_case_category_form"/>
+        </record>
+
+        <menuitem action="act_crm_case_category_form" id="menu_crm_case_category" parent="ekd_crm.next_id_51"/>
+
+        <!-- Case rules -->
+        <record id="view_crm_case_rule_form" model="ir.ui.view">
+            <field name="model">ekd.crm.case.rule</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Case Rule">
+                    <label name="name" />
+                    <field name="name" />
+                    <label name="active" />
+                    <field name="active" />
+                    <notebook colspan="4">
+                        <page string="Conditions" id="conditions">
+                            <separator colspan="4" string="Conditions on States" id="sp_state"/>
+                            <label name="trg_state_from" />
+                            <field name="trg_state_from" />
+                            <label name="trg_state_to" />
+                            <field name="trg_state_to" />
+
+                            <separator colspan="4" string="Conditions on Case Fields" id="sp_fields"/>
+                            <label name="trg_section" />
+                            <field name="trg_section" />
+                            <label name="trg_categ"/>
+                            <field name="trg_categ"/>
+                            <label name="trg_user" />
+                            <field name="trg_user" />
+                            <separator colspan="4" string="Conditions on Case Party" id="sp_party"/>
+                            <label name="trg_party"/>
+                            <field name="trg_party"/>
+                            <label name="trg_party_categ"/>
+                            <field name="trg_party_categ"/>
+                            <separator colspan="4" string="Conditions on Priority Range" id="sp_range"/>
+                            <label name="trg_priority_from"/>
+                            <field name="trg_priority_from"/>
+                            <label name="trg_priority_to"/>
+                            <field name="trg_priority_to"/>
+                            <separator colspan="4" string="Conditions on Timing" id="sp_timing"/>
+                            <label name="trg_date_type"/>
+                            <field name="trg_date_type"/>
+                            <label align="1.0" string="Delay After Trigger Date:" id="sp_delay"/>
+                            <group col="2" colspan="1" id="trg_date">
+                                <label name="trg_date_range"/>
+                                <field name="trg_date_range"/>
+                                <label name="trg_date_range_type"/>
+                                <field name="trg_date_range_type"/>
+                            </group>
+                            <separator colspan="4" string="Condition on Communication History" id="sp_history"/>
+                            <field name="trg_max_history"/>
+                            <separator colspan="4" string="Note" id="sp_note"/>
+                            <label align="0.0" string="The rule use a AND operator. The case must match all non empty fields so that the rule execute the action described in the 'Actions' tab." colspan="4" id="sp_help"/>
+                        </page>
+                        <page string="Actions" id="actions">
+                            <separator colspan="4" string="Fields to Change" id="sp_field"/>
+                            <label name="act_state"/>
+                            <field name="act_state"/>
+                            <label name="act_section"/>
+                            <field name="act_section"/>
+                            <label name="act_user"/>
+                            <field name="act_user"/>
+                            <label name="act_priority"/>
+                            <field name="act_priority"/>
+                            <separator colspan="4" string="E-Mail Reminders (includes the content of the case)" id="sp_email"/>
+                            <label name="act_remind_user"/>
+                            <field name="act_remind_user"/>
+                            <label name="act_remind_party"/>
+                            <field name="act_remind_party"/>
+                            <label name="act_remind_attach"/>
+                            <field name="act_remind_attach"/>
+                            <label colspan="4" name="act_email_cc"/>
+                            <field colspan="4" name="act_email_cc"/>
+<!--
+                            <field name="act_method" colspan="4" readonly="1"/>
+-->
+                        </page>
+                        <page string="E-Mail Actions" id="email">
+                            <separator colspan="4" string="Template of Email to Send" id="sp_email"/>
+                            <field name="act_mail_to_user"/>
+                            <field name="act_mail_to_party"/>
+                            <field name="act_mail_to_watchers"/>
+                            <field colspan="4" name="act_mail_to_email"/>
+                            <field colspan="4" name="act_mail_body"/>
+                            <separator colspan="4" string="Special Keywords to Be Used in The Body" id="sp_special"/>
+                            <label align="0.0" string="%%(case)s = Case ID" colspan="2" id="sp_case_001"/>
+                            <label align="0.0" string="%%(case_subject)s = Case subject" colspan="2" id="sp_case_002"/>
+                            <label align="0.0" string="%%(case_description)s = Case description" colspan="2" id="sp_case_003"/>
+                            <label align="0.0" string="%%(case_date)s = Creation date" colspan="2" id="sp_case_004"/>
+                            <label align="0.0" string="%%(email_from)s = party email" colspan="2" id="sp_case_005"/>
+                            <label align="0.0" string="%%(party)s = party name" colspan="2" id="sp_case_006"/>
+                            <label align="0.0" string="%%(party_email)s = party email" colspan="2" id="sp_case_007"/>
+                            <label align="0.0" string="%%(case_user)s = Responsible name" colspan="2" id="sp_case_008"/>
+                            <label align="0.0" string="%%(case_user_email)s = Responsible email" colspan="2" id="sp_case_009"/>
+                            <label align="0.0" string="%%(case_user_phone)s = Responsible phone" colspan="2" id="sp_case_010"/>
+                        </page>
+                    </notebook>
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="view_crm_case_rule_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case.rule</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Case Rule">
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+        <record id="act_crm_case_rule_form" model="ir.action.act_window">
+            <field name="name">Rules</field>
+            <field name="res_model">ekd.crm.case.rule</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_rule_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="view_crm_case_rule_tree"/>
+            <field name="act_window" ref="act_crm_case_rule_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_rule_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="view_crm_case_rule_form"/>
+            <field name="act_window" ref="act_crm_case_rule_form"/>
+        </record>
+
+        <menuitem action="act_crm_case_rule_form" id="menu_crm_case_rule" parent="ekd_crm.next_id_51"/>
+
+        <!-- Cases -->
+        <record id="view_crm_case_log_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case.log</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Case logs">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="som"/>
+                    <field name="user"/>
+                    <field name="section"/>
+                    <field name="channel"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+        <record id="view_crm_case_history_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case.history</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Case History">
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="som"/>
+                    <field name="user"/>
+                    <field name="channel"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="view_crm_case_tree" model="ir.ui.view">
+            <field name="model">ekd.crm.case</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="Cases">
+                    <field name="id"/>
+                    <field name="date"/>
+                    <field name="date_deadline"/>
+                    <field name="name"/>
+                    <field name="party"/>
+                    <field name="user"/>
+                    <field name="priority"/>
+                    <field name="planned_revenue" sum="Planned revenue"/>
+                    <field name="planned_cost" sum="Planned costs"/>
+                    <field name="state"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="view_crm_case_form" model="ir.ui.view">
+            <field name="model">ekd.crm.case</field>
+            <field name="type">form</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Cases">
+                    <group col="8" id="head" >
+                        <label name="name" />
+                        <field colspan="7" name="name" />
+                        <label name="section"/>
+                        <field name="section"/>
+                        <label name="date" />
+                        <field name="date" />
+                        <label name="date_deadline" />
+                        <field name="date_deadline" />
+                        <label name="priority"/>
+                        <field name="priority"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="General" id="general">
+                            <group col="8" colspan="4" id="gp_001">
+                                <label name="party" />
+                                <field colspan="3" name="party" />
+                                <label name="party_address" />
+                                <field colspan="3" name="party_address" />
+                                <newline/>
+                                <label name="email_from" />
+                                <field colspan="2" name="email_from" />
+                                <button name="button_remind_party" string="Send Reminder" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'pending']))}"/>
+                                <label name="user" />
+                                <field name="user" />
+                                <button name="button_remind_user" string="Send Reminder" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'pending']))}"/>
+                            </group>
+                            <separator colspan="4" id="sp_case_001"/>
+                            <field colspan="2" mode="tree,form" name="history_line">
+                                <form string="Communication history">
+                                    <group col="6" colspan="4" id="sp_case_001">
+                                        <label name="date" />
+                                        <field name="date" />
+                                        <label name="email" />
+                                        <field name="email" />
+                                        <label name="channel" />
+                                        <field name="channel" />
+                                    </group>
+                                    <newline/>
+                                    <field colspan="4" name="description" />
+                                </form>
+                                <tree string="Communication history">
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                            <group col="2" colspan="2" expand="1" id="gp_001">
+                                <label name="channel"/>
+                                <field name="channel"/>
+                                <button colspan="2" name="button_add_reply" string="Add Last Mail for Replying" type="object"
+                                    states="{'invisible': Equal(Eval('state'), 'open')}"/>
+                                <field colspan="2" name="description" />
+                                <button name="button_case_log_reply" string="Send party &amp; Historize" type="object"
+                                    states="{'invisible': Equal(Eval('state'), 'open')}"/>
+                                <button name="button_case_log" string="Historize" type="object"
+                                    states="{'invisible': Equal(Eval('state'), 'open')}"/>
+                            </group>
+
+                            <separator colspan="4"  id="gp_001"/>
+                            <group col="8" colspan="4"  id="gp_001">
+                                <field name="state" />
+                                <button name="button_case_close" string="Close" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'draft', 'pending']))}"/>
+                                <button name="button_case_open" string="Open" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['draft', 'pending']))}"/>
+                                <button name="button_case_cancel" string="Cancel" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'draft','pending']))}"/>
+                                <button name="button_case_pending" string="Pending" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'draft']))}"/>
+                                <button name="button_case_escalate" string="Escalate" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['open', 'draft', 'pending']))}"/>
+                                <button name="button_case_reset" string="Reset to Draft" type="object"
+                                    states="{'invisible': Not(In(Eval('state'), ['done', 'cancel']))}"/>
+                            </group>
+                        </page>
+                        <page string="Extra Info" id="extra" col="8">
+                            <label name="id" />
+                            <field name="id" />
+                            <label name="active" />
+                            <field name="active" />
+                            <label name="category" />
+                            <field name="category" />
+                            <label name="som" />
+                            <field name="som" />
+                            <label name="email_cc"/>
+                            <field colspan="7" name="email_cc"/>
+                            <separator colspan="8" string="Dates" id="sp_dates"/>
+                            <label name="create_date"/>
+                            <field name="create_date"/>
+                            <label name="date_closed"/>
+                            <field name="date_closed"/>
+                            <label name="date_action_last"/>
+                            <field name="date_action_last"/>
+                            <label name="date_action_next"/>
+                            <field name="date_action_next"/>
+                            <separator colspan="8" string="Estimates" id="gp_001"/>
+                            <label name="planned_revenue"/>
+                            <field name="planned_revenue"/>
+                            <label name="planned_cost"/>
+                            <field name="planned_cost"/>
+                            <label name="probability"/>
+                            <field name="probability"/>
+                            <separator colspan="8" string="References" id="gp_002"/>
+                            <label name="ref"/>
+                            <field colspan="7" name="ref"/>
+                            <label name="ref2"/>
+                            <field colspan="7" name="ref2"/>
+                        </page>
+                        <page string="History" id="history">
+                            <field colspan="4" name="log_ids" >
+                                <form string="Actions">
+                                    <separator colspan="4" string="Action Information" id="action"/>
+                                    <field colspan="4" name="name"/>
+                                    <label name="date" />
+                                    <field name="date" />
+                                    <label name="user" />
+                                    <field name="user" />
+                                    <label name="som" />
+                                    <field name="som" />
+                                    <label name="channel"/>
+                                    <field name="channel"/>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            ]]>
+            </field>
+        </record>
+
+        <record id="act_crm_case_form_all" model="ir.action.act_window">
+            <field name="name">All Cases</field>
+            <field name="res_model">ekd.crm.case</field>
+            <field name="view_type">form</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_view1">
+            <field name="sequence" eval="1"/>
+            <field name="view" ref="view_crm_case_tree"/>
+            <field name="act_window" ref="act_crm_case_form_all"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_crm_case_view2">
+            <field name="sequence" eval="2"/>
+            <field name="view" ref="view_crm_case_form"/>
+            <field name="act_window" ref="act_crm_case_form_all"/>
+        </record>
+        <menuitem action="act_crm_case_form_all" id="menu_crm_case_all" parent="ekd_crm.next_id_52"/>
+
+        <record id="act_crm_case_form_open" model="ir.action.act_window">
+            <field name="name">Open Cases</field>
+            <field name="res_model">ekd.crm.case</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('state','!=','done'),('state','!=','cancel'),('state','!=','pending')]</field>
+        </record>
+        <menuitem action="act_crm_case_form_open" id="menu_crm_case_open" parent="ekd_crm.menu_crm_case_all"/>
+
+        <record id="act_crm_case_my" model="ir.action.act_window">
+            <field name="name">My cases</field>
+            <field name="res_model">ekd.crm.case</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user','=', Get( Eval('context', {}), 'user', False))]</field>
+        </record>
+        <menuitem action="act_crm_case_my" id="menu_crm_case_my" parent="ekd_crm.next_id_52"/>
+
+        <record id="act_crm_case_my_open" model="ir.action.act_window">
+            <field name="name">My Open Cases</field>
+            <field name="res_model">ekd.crm.case</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user','=', Get( Eval('context', {}), 'user', False)),('state','!=','done'),('state','!=','cancel'),('state','!=','pending')]</field>
+        </record>
+        <menuitem action="act_crm_case_my_open" id="menu_crm_case_my_open" parent="ekd_crm.menu_crm_case_my"/>
+
+        <record id="crm_case_section_open_act" model="ir.action.act_window">
+            <field name="name">Cases</field>
+            <field name="res_model">ekd.crm.case</field>
+            <field name="domain">[('section','child_of',[Eval('active_id')])]</field>
+            <field name="view_type">form</field>
+        </record>
+<!-->
+        <record id="ir_open_section_case" model="ir.values">
+            <field eval="'tree_but_open'" name="key2"/>
+            <field eval="'ekd.crm.case.section'" name="model"/>
+            <field name="name">Open Cases</field>
+            <field eval="'ir.action.act_window,%d'%crm_case_section_open_act" name="value"/>
+            <field eval="True" name="object"/>
+        </record>
+<-->
+        <record id="crm_case_history-view" model="ir.ui.view">
+            <field name="model">ekd.crm.case.history</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="Cases">
+                    <separator colspan="4" string="Case Description" id="action"/>
+                    <field colspan="4" name="name" />
+                    <label name="date" />
+                    <field name="date" />
+                    <label name="user" />
+                    <field name="user" />
+                    <label name="case" />
+                    <field name="case" />
+                    <label name="som" />
+                    <field name="som" />
+                    <label name="channel" />
+                    <field name="channel" />
+                    <field colspan="4" name="description" />
+                </form>
+            ]]>
+            </field>
+        </record>
+
+        <record id="crm_case_history-act" model="ir.action.act_window">
+            <field name="name">All Histories</field>
+            <field name="res_model">ekd.crm.case.history</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem id="menu_crm_case_history-act_main" name="Cases Histories" parent="ekd_crm.next_id_52"/>
+        <menuitem action="crm_case_history-act" id="menu_crm_case_history-act" parent="ekd_crm.menu_crm_case_history-act_main"/>
+
+        <record id="crm_case_history_my-act" model="ir.action.act_window">
+            <field name="name">My Histories</field>
+            <field name="res_model">ekd.crm.case.history</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('user','=', Get( Eval('context', {}), 'user', False))]</field>
+        </record>
+        <menuitem action="crm_case_history_my-act" id="menu_crm_case_history_my-act" parent="ekd_crm.menu_crm_case_history-act_main"/>
+
+        <record id="crm_segmentation_line_tree-view" model="ir.ui.view">
+            <field name="model">ekd.crm.segmentation.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="party Segmentation Lines">
+                    <field name="name"/>
+                    <field name="expr_name"/>
+                    <field name="expr_operator"/>
+                    <field name="expr_value"/>
+                    <field name="operator"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="crm_segmentation_line-view" model="ir.ui.view">
+            <field name="model">ekd.crm.segmentation.line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="party Segmentation Lines">
+                    <field colspan="4" name="name" />
+                    <group col="2" colspan="4" id="action">
+                        <label name="expr_name" />
+                        <field name="expr_name" />
+                        <label name="expr_operator" />
+                        <field name="expr_operator" />
+                        <label name="expr_value" />
+                        <field name="expr_value" />
+                    </group>
+                    <newline/>
+                    <label name="operator"/>
+                    <field name="operator"/>
+                </form>
+            ]]>
+            </field>
+        </record>
+
+        <record id="crm_segmentation-view" model="ir.ui.view">
+            <field name="model">ekd.crm.segmentation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <form string="party Segmentation">
+                    <notebook>
+                        <page string="Segmentation" id="segmentation">
+                            <separator colspan="4" string="Segmentation Description" id="sp_001"/>
+                            <label name="name" />
+                            <field name="name" />
+                            <label name="exclusif"/>
+                            <field name="exclusif"/>
+                            <newline/>
+                            <label name="categ" />
+                            <field colspan="2" name="categ" />
+                            <newline/>
+                            <field colspan="4" name="description" />
+                            <label name="state"/>
+                            <field name="state"/>
+                            <group col="3" colspan="2"  id="gp_001">
+                                <button name="button_process_start" string="Compute Segmentation" type="object"
+                                    states="{'invisible': Not(Equal(Eval('state'), 'running'))}"/>
+                                <button name="button_process_stop" string="Stop Process" type="object"
+                                    states="{'invisible': Equal(Eval('state'), 'running')}"/>
+                                <button name="button_process_continue" string="Continue Process" type="object"
+                                    states="{'invisible': Equal(Eval('state'), 'running')}"/>
+                            </group>
+                        </page>
+                        <page string="Sales Purchase"  id="sales">
+                            <label name="sales_purchase_active"/>
+                            <field name="sales_purchase_active"/>
+                            <separator colspan="4" string="State of Mind Computation" id="sp_001"/>
+                            <label name="som_interval"/>
+                            <field name="som_interval"/>
+                            <label name="som_interval_max"/>
+                            <field name="som_interval_max"/>
+                            <label name="som_interval_decrease"/>
+                            <field name="som_interval_decrease"/>
+                            <label name="som_interval_default"/>
+                            <field name="som_interval_default"/>
+                            <separator colspan="4" string="Segmentation Test" id="sp_001"/>
+                            <field colspan="4" name="segmentation_line" widget="one2many"/>
+                        </page>
+                    </notebook>
+                </form>
+            ]]>
+            </field>
+        </record>
+        <record id="crm_segmentation_tree-view" model="ir.ui.view">
+            <field name="model">ekd.crm.segmentation</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            <![CDATA[
+                <tree string="party Segmentations">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="categ"/>
+                </tree>
+            ]]>
+            </field>
+        </record>
+
+        <record id="crm_segmentation-act" model="ir.action.act_window">
+            <field name="name">Segmentations</field>
+            <field name="res_model">ekd.crm.segmentation</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="crm_segmentation_tree-act" model="ir.action.act_window">
+            <field name="name">Segmentations</field>
+            <field name="res_model">ekd.crm.segmentation</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem id="next_id_53" name="Segmentations" parent="ekd_crm.menu_crm_configuration"/>
+        <menuitem action="crm_segmentation_tree-act" id="menu_crm_segmentation-act" parent="next_id_53"/>
+<!-->
+        <act_window domain="[('section', '=', active_id),('state','&lt;&gt;','done'),('state','&lt;&gt;','cancel'),('state','&lt;&gt;','pending')]" 
+            id="act_crm_case_section_crm_case_opened" name="Open cases" res_model="ekd_crm.case" 
+            src_model="ekd_crm.case.section" view_type="form"/>
+
+        <act_window domain="[('categ', '=', active_id),('state','&lt;&gt;','done'),('state','&lt;&gt;','cancel'),('state','&lt;&gt;','pending')]" 
+            id="act_crm_case_categ_crm_case_opened" name="Open cases" res_model="ekd_crm.case" 
+            src_model="ekd_crm.case.categ" view_type="form"/>
+
+        <act_window domain="[('party', '=', active_id),('state','&lt;&gt;','done'),('state','&lt;&gt;','cancel'),('state','&lt;&gt;','pending')]" 
+            id="act_res_party_2_crm_case_opened" name="Open cases" res_model="ekd_crm.case" 
+            src_model="ekd.party" view_type="form"/>
+
+        <act_window domain="[('channel', '=', active_id),('state','&lt;&gt;','done'),('state','&lt;&gt;','cancel'),('state','&lt;&gt;','pending')]" id="act_res_party_channel_2_crm_case_opened" name="Open cases" res_model="ekd_crm.case" src_model="ekd.party.channel" view_type="form"/>
+
+        <act_window domain="[('user', '=', active_id),('state','&lt;&gt;','done'),('state','&lt;&gt;','cancel'),('state','&lt;&gt;','pending')]" 
+            id="act_res_users_2_crm_case_opened" name="Open cases" res_model="ekd_crm.case" 
+            src_model="res.users" view_type="form"/>
+<-->
+
+    </data>
+</tryton>
